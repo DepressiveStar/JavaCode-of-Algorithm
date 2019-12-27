@@ -13,8 +13,8 @@ public class MergeSort {
         while(l1+k<=n-1){
             l2 = l1+k;//计算第二个有序子数组下界
             u1 = l2-1;//计算第一个有序子数组上界
-            u2 = (l2+k-1<=n-1)?(12+k-1):(n-1);//计算第二个有序子数组上界
-            for(i=l1,j=l2;i<=u1&&j<=u2;m++){
+            u2 = (l2+k-1<=n-1)?(l2+k-1):(n-1);//计算第二个有序子数组上界
+            for(i=l1,j=l2;i<=u1&&j<=u2;m++){//两两比较，小在前大在后，结果存储在swap中
                 if(a[i]<=a[j]){
                     swap[m] = a[i];
                     i++;
@@ -58,7 +58,7 @@ public class MergeSort {
     }
 
     public static void main(String[] args) {
-        int[] a = {25,48,65,32,14,9,21,6};
+        int[] a = {25,48,65,32,14,9,21};
         mergeSort(a);
         for(int i:a){
             System.out.print(i+" ");
